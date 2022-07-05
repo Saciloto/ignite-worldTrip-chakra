@@ -1,6 +1,13 @@
 import { Avatar, Box, Flex, Image, Stack, Text } from "@chakra-ui/react"
 
-export const CardForCities = () => {
+type CardForCitiesProps = {
+    image: string
+    name: string
+    country: string
+    flag: string
+}
+
+export const CardForCities = ({ country, flag, image, name }: CardForCitiesProps) => {
     return (
         <Box
             maxW={'256px'}
@@ -10,9 +17,7 @@ export const CardForCities = () => {
             borderColor={'yellow'}
         >
             <Image
-                src={
-                    'https://www.britishcouncil.org.br/sites/default/files/a-girl-standing-by-a-golden-letter-box-in-front-of-westminster-abbey-with-a-red-bus-behind.jpg'
-                }
+                src={image}
                 objectFit={'cover'}
                 alt='cardphoto'
                 w='full'
@@ -20,10 +25,10 @@ export const CardForCities = () => {
             />
             <Flex py='4' align={'center'} justify={'space-around'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
-                    <Text fontSize={'md'} fontWeight={600}>Londres</Text>
-                    <Text fontSize={'xs'} color={'gray.500'}>Reino Unido</Text>
+                    <Text fontSize={'md'} fontWeight={600}>{name}</Text>
+                    <Text fontSize={'xs'} color={'gray.500'}>{country}</Text>
                 </Stack>
-                <Avatar size='sm' name='Dan Abrahmov' src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Flag_of_the_United_Kingdom_%282-3%29.svg/1200px-Flag_of_the_United_Kingdom_%282-3%29.svg.png' />
+                <Avatar size='sm' name='Dan Abrahmov' src={`https://flagcdn.com/48x36/${flag}.png`} />
             </Flex>
         </Box>
     )
