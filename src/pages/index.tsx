@@ -14,7 +14,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Image src='/images/Banner.svg' alt='banner' w='98vw' />
+      <Image src='/images/Banner.svg' alt='banner' w='100vw' />
       <Flex w='full' justify='center' align='center'>
         <HStack spacing='130px'>
           <IconsWithText description='vida noturna' iconName='Vector' />

@@ -1,10 +1,11 @@
-import { Avatar, Box, Center, Container, Flex, Heading, Image, SimpleGrid, Stack, Text, useColorModeValue } from "@chakra-ui/react"
+import { Avatar, Box, Center, Container, Flex, Heading, Image, SimpleGrid, Stack, Text, Tooltip, useColorModeValue } from "@chakra-ui/react"
 import { Header } from "../../components/Header"
 import { GetServerSideProps } from "next"
 import { CardForCities } from "../../components/cardForCities"
 import { continents } from "../../utils/continents"
 import { useState } from "react"
 import { cities } from "../../utils/cities"
+import { MdOutlineInfo } from "react-icons/md"
 interface ContinentProps {
     continent: string
 }
@@ -14,7 +15,7 @@ const Continent = ({ continent }: ContinentProps) => {
 
     return (
         <Container maxW='container.xl' align='center' justify='center' pb='8'>
-            <Header />
+            <Header goBack />
             <Flex
                 direction='column'
                 minH={'500px'}
@@ -77,11 +78,19 @@ const Continent = ({ continent }: ContinentProps) => {
                                 margin='0'>
                                 {selectedCountinent?.cities}
                             </Text>
-                            <Text
-                                fontWeight='bold'
-                                margin='0'>
-                                cidades +100
-                            </Text>
+                            <Flex align='center'>
+                                <Text
+                                    fontWeight='bold'
+                                    mr='2'
+                                >
+                                    cidades +100
+                                </Text>
+                                <Tooltip label='Cidades mais visitadas do munto' fontSize='md'>
+                                    <Box cursor='help'>
+                                        <MdOutlineInfo color='#ccc' />
+                                    </Box>
+                                </Tooltip>
+                            </Flex>
                         </Box>
                     </Flex>
                 </SimpleGrid>

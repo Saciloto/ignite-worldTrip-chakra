@@ -22,6 +22,7 @@ export const CardForCities = ({ country, flag, image, name }: CardForCitiesProps
                 alt='cardphoto'
                 w='full'
                 maxHeight={'153px'}
+                minHeight={'153px'}
             />
             <Flex py='4' align={'center'} justify={'space-around'}>
                 <Stack direction={'column'} spacing={0} fontSize={'sm'}>
